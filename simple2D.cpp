@@ -5,8 +5,18 @@ int window_height;
 
 int lastTime;
 
+double background[] = {1, 1, 1};
+
 void setColor(double r, double g, double b){
   glColor3f(r, g, b);
+}
+
+void setBackgroundColor(double r, double g, double b){
+
+  background[0] = r;
+  background[1] = g;
+  background[2] = b;
+
 }
 
 void line(double x1, double y1, double x2, double y2, double width){
@@ -70,6 +80,23 @@ void circle(double x, double y, double r){
 
 }
 
+void text(double x, double y, void* font, std::string ta){
+
+  int len = (int) ta.length();
+
+  unsigned char str[len];
+  int count = 0;
+
+  for(char& c : ta){
+    str[count] = c;
+    count += 1;
+  }
+
+  glRasterPos2f(x / window_width, y / window_height);
+  glutBitmapString(font, str);
+
+}
+
 void rerender(int v){
 
   glutPostRedisplay();
@@ -89,7 +116,7 @@ void onResize(int w, int h){
 void renderAll(){
 
   // clear the canvas
-  glClearColor(0, 0, 0, 0);
+  glClearColor(background[0], background[1], background[2], 0);
   glClear(GL_COLOR_BUFFER_BIT);
 
   int currentTime = glutGet(GLUT_ELAPSED_TIME);

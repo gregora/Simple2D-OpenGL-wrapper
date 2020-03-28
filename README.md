@@ -18,8 +18,10 @@ Then, inside main function, you need to create a start function like this: `star
 ## Functions for rendering
 Inside your `void render(double delta)` this functions accepts a double delta (time in seconds between two frames). Inside render function you can call these functions:
 * `setColor(double red, double green, double blue)` - A function that changes fill color. It accepts three arguments, doubles with values from 0 to 1, that define fill color
+* `setBackgroundColor(double red, double, green, double blue)` - Set background
 * `line(double x1, double y1, double x2, double y2, double width)`
 * `triangle(double x1, double y1, double x2, double y2, double x3, double y3)`
 * `rectangle(double x1, double y1, double x2, double y2)`
 * `polygon(int number_of_vertices, double[] coordinates)` - This functions draws a polygon, with a given number of vertices and give coordinates (`double coordinates[] = {x1, y1, x2, y2, ..., xn, yn}`)
 * `circle(double x, double y, double r)`
+* `text(double x, double y, void* font, std::string txt)` - Render text
