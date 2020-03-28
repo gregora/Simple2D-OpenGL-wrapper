@@ -7,6 +7,16 @@ void setColor(double r, double g, double b){
   glColor3f(r, g, b);
 }
 
+void line(double x1, double y1, double x2, double y2, double width){
+
+  glLineWidth(width);
+  glBegin(GL_LINES);
+    glVertex3f(x1 / window_width, y1 / window_height, 0);
+    glVertex3f(x2 / window_width, y2 / window_height, 0);
+  glEnd();
+
+}
+
 void triangle(double x1, double y1, double x2, double y2, double x3, double y3){
 
   glBegin(GL_TRIANGLES);
@@ -55,16 +65,6 @@ void circle(double x, double y, double r){
     //draw a triangle
     triangle(x, y, x + cos(step * i)*r, y + sin(step * i)*r, x + cos(step * (i + 1))*r, y + sin(step * (i + 1))*r);
   }
-
-}
-
-void line(double x1, double y1, double x2, double y2, double width){
-
-  glLineWidth(width);
-  glBegin(GL_LINES);
-  glVertex3f(x1 / window_width, y1 / window_height, 0);
-  glVertex3f(x2 / window_width, y2 / window_height, 0);
-  glEnd();
 
 }
 
