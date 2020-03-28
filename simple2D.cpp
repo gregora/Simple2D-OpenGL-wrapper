@@ -23,8 +23,8 @@ void line(double x1, double y1, double x2, double y2, double width){
 
   glLineWidth(width);
   glBegin(GL_LINES);
-    glVertex3f(x1 / window_width, y1 / window_height, 0);
-    glVertex3f(x2 / window_width, y2 / window_height, 0);
+    glVertex3f(2 * x1 / window_width, 2 * y1 / window_height, 0);
+    glVertex3f(2 * x2 / window_width, 2 * y2 / window_height, 0);
   glEnd();
 
 }
@@ -34,9 +34,9 @@ void triangle(double x1, double y1, double x2, double y2, double x3, double y3){
   glBegin(GL_TRIANGLES);
 
 
-          glVertex3f(x1 / window_width, y1 / window_height, 0);
-          glVertex3f(x2 / window_width, y2 / window_height, 0);
-          glVertex3f(x3 / window_width, y3 / window_height, 0);
+          glVertex3f(2 * x1 / window_width, 2 * y1 / window_height, 0);
+          glVertex3f(2 * x2 / window_width, 2 * y2 / window_height, 0);
+          glVertex3f(2 * x3 / window_width, 2 * y3 / window_height, 0);
 
 
   glEnd();
@@ -47,10 +47,10 @@ void rectangle(double x1, double y1, double x2, double y2){
 
   glBegin(GL_POLYGON);
 
-    glVertex3f(x1 / window_width, y1 / window_height, 0.0);
-    glVertex3f(x2 / window_width, y1 / window_height, 0.0);
-    glVertex3f(x2 / window_width, y2 / window_height, 0.0);
-    glVertex3f(x1 / window_width, y2 / window_height, 0.0);
+    glVertex3f(2 * x1 / window_width, 2 * y1 / window_height, 0.0);
+    glVertex3f(2 * x2 / window_width, 2 * y1 / window_height, 0.0);
+    glVertex3f(2 * x2 / window_width, 2 * y2 / window_height, 0.0);
+    glVertex3f(2 * x1 / window_width, 2 * y2 / window_height, 0.0);
 
   glEnd();
 
@@ -61,7 +61,7 @@ void polygon(int vertices_num, double coords[]){
   glBegin(GL_POLYGON);
 
   for(int i = 0; i < 2*vertices_num; i+=2){
-    glVertex3f(coords[i] / window_width, coords[i + 1] / window_height, 0.0);
+    glVertex3f(2 * coords[i] / window_width, 2 * coords[i + 1] / window_height, 0.0);
   }
 
   glEnd();
@@ -92,7 +92,7 @@ void text(double x, double y, void* font, std::string ta){
     count += 1;
   }
 
-  glRasterPos2f(x / window_width, y / window_height);
+  glRasterPos2f(2 * x / window_width, 2 * y / window_height);
   glutBitmapString(font, str);
 
 }

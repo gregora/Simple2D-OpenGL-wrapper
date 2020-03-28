@@ -48,7 +48,7 @@ void render(double delta){
 
   std::string str = std::to_string(FPS);
   str.append(" FPS");
-  text( - (window_width) + 10,  (window_height) - 40, GLUT_BITMAP_HELVETICA_18, str);
+  text( - (window_width / 2) + 10,  (window_height / 2) - 20, GLUT_BITMAP_HELVETICA_18, str);
 
   setColor(0.34, 0.67, 0.65);
   rectangle(150, 150, 250, 200);
