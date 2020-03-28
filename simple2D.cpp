@@ -3,6 +3,8 @@
 int window_width;
 int window_height;
 
+int lastTime;
+
 void setColor(double r, double g, double b){
   glColor3f(r, g, b);
 }
@@ -90,7 +92,11 @@ void renderAll(){
   glClearColor(0, 0, 0, 0);
   glClear(GL_COLOR_BUFFER_BIT);
 
-  render();
+  int currentTime = glutGet(GLUT_ELAPSED_TIME);
+  double delta = (double) (currentTime - lastTime) / 1000;
+  lastTime = currentTime;
+
+  render(delta);
 
   // flush
   glFlush();
@@ -110,6 +116,8 @@ int start(int argc, char **argv, int width, int height, std::string title){
     glutCreateWindow(title.c_str());
 
     glutKeyboardFunc(keyboardInput);
+
+    lastTime = glutGet(GLUT_ELAPSED_TIME);
 
     glutDisplayFunc(renderAll);
     glutReshapeFunc(onResize);

@@ -16,7 +16,7 @@ To use this wrapper in your own project, you need to download `simple2D.cpp` and
 Then, inside main function, you need to create a start function like this: `start(argc, argv, 1000, 1000, "Test");`. This will create a window, with a width of 1000 pixels, height of 1000 pixels and with title "Test". But you can't render anything yet. To do that, you need to define a void render() function. Inside this function, you can now call all the functions listed below. But that is not all, you will also need to add function `void keyboardInput(unsigned char key, int x, int y){}`, that will handle keyboard inputs.
 
 ## Functions for rendering
-Inside your `void render()` function you can call these functions:
+Inside your `void render(double delta)` this functions accepts a double delta (time in seconds between two frames). Inside render function you can call these functions:
 * `setColor(double red, double green, double blue)` - A function that changes fill color. It accepts three arguments, doubles with values from 0 to 1, that define fill color
 * `line(double x1, double y1, double x2, double y2, double width)`
 * `triangle(double x1, double y1, double x2, double y2, double x3, double y3)`

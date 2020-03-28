@@ -11,7 +11,7 @@
 int start(int argc, char **argv, int width, int height, std::string title);
 
 ///functions required in main.cpp
-void render(); //inside this function you can rendering functios
+void render(double delta); //inside this function you can rendering functios
 void keyboardInput(unsigned char key, int x, int y); //keyboard input
 
 //functions that can be called from render() function in main.cpp

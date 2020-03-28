@@ -6,8 +6,12 @@ int main(int argc, char **argv){
 
 }
 
+double circlex = 0;
+double circley = 0;
 
-void render(){
+void render(double delta){
+
+  circlex += 100 * delta;
 
   setColor(0.1, 0.6, 0.2);
   double p[] = {0, 0, 100, 0, 100, 100, 0, 100, -50, 50};
@@ -17,7 +21,7 @@ void render(){
   rectangle(-100, -100, -200, -200);
 
   setColor(0.7, 0.2, 0.4);
-  circle(100, 100, 50);
+  circle(circlex, circley, 50);
 
 }
 
