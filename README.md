@@ -17,6 +17,7 @@ Then, inside main function, you need to create a start function like this: `star
 
 ## Functions for rendering
 Inside your `void render(double delta)` this functions accepts a double delta (time in seconds between two frames). Inside render function you can call these functions:
+* `rerender()` - Rerenders everything. This will call your `render(double delta)` function
 * `setColor(double red, double green, double blue)` - A function that changes fill color. It accepts three arguments, doubles with values from 0 to 1, that define fill color
 * `setBackgroundColor(double red, double, green, double blue)` - Set background
 * `line(double x1, double y1, double x2, double y2, double width)`

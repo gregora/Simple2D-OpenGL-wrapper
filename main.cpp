@@ -1,4 +1,6 @@
 #include "simple2D.h"
+#include <thread>
+#include <chrono>
 
 int frame_num = 0;
 int FPS = 0;
@@ -11,6 +13,10 @@ extern int window_height;
 int main(int argc, char **argv){
 
   start(argc, argv, 1000, 1000, "Test");
+
+  while(true){
+    rerender();
+  }
 
 }
 
@@ -36,7 +42,7 @@ void render(double delta){
 
   setColor(0, 0, 0);
 
-  if(frame_num % 50 == 0){
+  if(frame_num % 50 == 0 || frame_num == 1){
     FPS = 1 / delta;
   }
 
@@ -46,6 +52,9 @@ void render(double delta){
 
   setColor(0.34, 0.67, 0.65);
   rectangle(150, 150, 250, 200);
+
+  setColor(0, 0, 0);
+  //texture();
 
 }
 

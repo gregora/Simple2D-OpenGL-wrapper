@@ -15,6 +15,8 @@ void render(double delta); //inside this function you can rendering functios
 void keyboardInput(unsigned char key, int x, int y); //keyboard input
 
 //functions that can be called from render() function in main.cpp
+void rerender(); // rerender the canvas
+
 void setColor(double r, double g, double b);
 void setBackgroundColor(double r, double g, double b);
 
@@ -28,7 +30,6 @@ void text(double x, double y, void* font, std::string ta);
 
 //internal functions
 void renderAll();
-void rerender(int v);
 void onResize(int w, int h);
 
 #endif

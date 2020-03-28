@@ -97,10 +97,10 @@ void text(double x, double y, void* font, std::string ta){
 
 }
 
-void rerender(int v){
+void rerender(){
 
   glutPostRedisplay();
-  glutTimerFunc(0, rerender, 0);
+  glutMainLoopEvent();
 
 }
 
@@ -148,10 +148,6 @@ int start(int argc, char **argv, int width, int height, std::string title){
 
     glutDisplayFunc(renderAll);
     glutReshapeFunc(onResize);
-
-
-    glutTimerFunc(0, rerender, 0);
-    glutMainLoop();
 
     return 0;
 
