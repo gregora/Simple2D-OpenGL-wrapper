@@ -2,8 +2,8 @@
 
 ## Dependencies
 * Glut
-  ** To install on Linux `sudo apt-get install mesa-utils` and `sudo apt-get install freeglut3-dev`
-  ** To install on Windows `http://freeglut.sourceforge.net/`
+  * To install on Linux `sudo apt-get install mesa-utils` and `sudo apt-get install freeglut3-dev`
+  * To install on Windows `http://freeglut.sourceforge.net/`
 
 ## Compile
 * Linux `g++ main.cpp simple2D.cpp -o main.out -lGL -lGLU -lglut`
